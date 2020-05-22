@@ -1,10 +1,10 @@
 const express = require('express')
-const users = require('./routes/users')
-const auth = require('./routes/auth')
-const contacts = require('./routes/contacts')
+const connectDB = require('./config/db')
 
 const app = express();
 
+//connect database
+connectDB(); 
 
 app.get('/', (req, res) => {
     res.json({ msg: "Hello world" })
